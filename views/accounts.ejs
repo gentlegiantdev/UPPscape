@@ -1,0 +1,29 @@
+<%- include('partials/header') -%>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<accounts.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/account/<%= accounts[i]._id%>">
+              <span><%= accounts[i].accountName%></span>
+            </a>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>
+    <div class="mt-5">
+            <h2>Add new account</h2>
+            <form action="/account/createAccount" method="POST">
+              <div class="mb-3">
+                  <label for="title" class="form-label">Account Name</label>
+                  <input type="text" class="form-control" id="accountName" name="accountName">
+              </div>
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+    </div>
+    <div class="col-6 mt-5">
+      <a class="btn btn-primary" href="/profile">Return to Profile</a>
+      <a class="btn btn-primary" href="/feed">Return to Feed</a>
+    </div>
+<%- include('partials/footer') -%>
