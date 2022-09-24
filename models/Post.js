@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema({
+  // account: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "Account",
+  // },
   building: {
     type: Number,
     required: true,
@@ -9,7 +13,7 @@ const PostSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  location: {
+  locationNumber: {
     type: Number,
     required: true,
   },
@@ -22,7 +26,7 @@ const PostSchema = new mongoose.Schema({
     required: true,
   },
   plantSize: {
-    type: Number,
+    type: String,
     required: true,
   },
   plantImage: {
@@ -31,7 +35,7 @@ const PostSchema = new mongoose.Schema({
   },
   previousPlants: {
     type: Array,
-    required: true,
+    required: false,
   },
   lastServicedDate: {
     type: Date,
@@ -56,10 +60,6 @@ const PostSchema = new mongoose.Schema({
   cloudinaryId: {
     type: String,
     require: true,
-  },
-  account: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Account",
   },
   createdAt: {
     type: Date,
