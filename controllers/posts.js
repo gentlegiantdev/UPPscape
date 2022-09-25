@@ -1,6 +1,9 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 
+
+
+
 module.exports = {
   getProfile: async (req, res) => {
     try {
@@ -13,7 +16,7 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const posts = await Post.findById(req.params.id).select('account').sort({ locationNumber: "asc" }).lean();
-      res.render("feed.ejs", { posts: posts });
+      res.render("feed.ejs", { posts: posts, account_id: req.params.id });
     } catch (err) {
       console.log(err);
     }
@@ -44,6 +47,7 @@ module.exports = {
         cloudinaryId: result.public_id,
       });
       console.log("Post has been added!");
+      console.log(req.body);
       res.redirect("/accounts");
     } catch (err) {
       console.log(err);

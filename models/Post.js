@@ -2,8 +2,7 @@ const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema({
   account: {
-    type: String,
-    
+   type: String,
   },
   building: {
     type: Number,
