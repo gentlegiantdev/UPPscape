@@ -4,8 +4,11 @@
             <h2>Add a plant location</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
+                  <input type="hidden" class="form-control" id="account" name="account" account="{req.params.id}"> 
+              </div>
+              <div class="mb-3">
                   <label for="building" class="form-label">building</label>
-                  <input type="text" class="form-control" id="building" name="building">
+                  <input type="text" class="form-control" id="building" name="building" > 
               </div>
               <div class="mb-3">
                   <label for="floor" class="form-label">floor</label>

@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema({
   account: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Account",
+    type: String,
+    
   },
   building: {
     type: Number,
