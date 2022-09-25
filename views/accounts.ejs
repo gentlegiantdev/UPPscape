@@ -4,7 +4,7 @@
       <ul class="row list-unstyled">
         <% for(var i=0; i<accounts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
-            <a href="/account/<%= accounts[i]._id%>">
+            <a href="/feed/<%= accounts[i]._id%>">
               <span><%= accounts[i].accountName%></span>
             </a>
           </li>
@@ -24,6 +24,5 @@
     </div>
     <div class="col-6 mt-5">
       <a class="btn btn-primary" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
     </div>
 <%- include('partials/footer') -%>

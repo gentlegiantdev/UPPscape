@@ -1,15 +1,38 @@
 <%- include('partials/header') -%>
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].plantImage%>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
-    </div>
-  </div>  
+  
+  <div class="mt-5">
+            <h2>Add a plant location</h2>
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                  <label for="building" class="form-label">building</label>
+                  <input type="text" class="form-control" id="building" name="building">
+              </div>
+              <div class="mb-3">
+                  <label for="floor" class="form-label">floor</label>
+                  <input type="text" class="form-control" id="floor" name="floor">
+              </div>
+              <div class="mb-3">
+                  <label for="locationNumber" class="form-label">location number</label>
+                  <input type="text" class="form-control" id="locationNumber" name="locationNumber">
+              </div>
+              <div class="mb-3">
+                  <label for="lightLevel" class="form-label">light level</label>
+                  <input type="text" class="form-control" id="lightLevel" name="lightLevel">
+              </div>
+              <div class="mb-3">
+                  <label for="currentPlant" class="form-label">current plant</label>
+                  <input type="text" class="form-control" id="currentPlant" name="currentPlant">
+              </div>
+              <div class="mb-3">
+                  <label for="plantSize" class="form-label">plant size</label>
+                  <input type="text" class="form-control" id="plantSize" name="plantSize">
+              </div>
+              <div class="mb-3">
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+              </div>
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>  
 <%- include('partials/footer') -%>
