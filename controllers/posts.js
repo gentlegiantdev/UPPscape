@@ -53,6 +53,20 @@ module.exports = {
       console.log(err);
     }
   },
+  updatePostServiceDate: async (req, res) => {
+   try {
+      await Post.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+         lastServicedDate: new Date(0) 
+        },
+      );
+      console.log("New service timestamp logged.");
+      res.redirect(`/post/${req.params.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
   likePost: async (req, res) => {
     try {
       await Post.findOneAndUpdate(

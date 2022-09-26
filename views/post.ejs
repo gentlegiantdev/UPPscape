@@ -13,6 +13,12 @@
             <span>Floor: <%= post.floor%></span>
             <span>lightLevel: <%= post.lightLevel%></span>
             <span>Last Serviced: <%= post.lastServicedDate%></span>
+            <form
+              class="col-1"
+              action="/post/updatePostServiceDate/<%= post.id %>?_method=PUT"
+              method="POST">
+              <button class="btn btn-primary" type="submit">Mark Serviced</button>
+            </form>
         
       </div>
     </div>

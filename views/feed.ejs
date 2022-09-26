@@ -5,16 +5,14 @@
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
             <span>Last Serviced: <%= posts[i].lastServicedDate%></span>
-            <button>Mark Serviced</button>
-            <img class="img-fluid" src="<%= posts[i].plantImage%>">
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="img-fluid" src="<%= posts[i].plantImage%>">
+            </a>
             <span><%= posts[i].plantSize%></span>
             <span><%= posts[i].currentPlant%></span>
             <span>Location #: <%= posts[i].locationNumber%></span>
             <span>Building: <%= posts[i].building%></span>
             <span>Floor: <%= posts[i].floor%></span>
-            <a href="/post/<%= posts[i]._id%>">
-            <span>More Info</span>  
-            </a>
           </li>
         <% } %>
         </ul>
