@@ -1,7 +1,15 @@
 <%- include('partials/header') -%>
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
+  
+
+  <div class="drawer">
+  <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content">
+    <!-- Page content here -->
+    <label for="my-drawer" class="btn btn-primary drawer-button">Accounts</label>
+  </div> 
+  <div class="drawer-side">
+    <label for="my-drawer" class="drawer-overlay"></label>
+     <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
         <% for(var i=0; i<accounts.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
             <a href="/feed/<%= accounts[i]._id%>">
@@ -9,20 +17,39 @@
             </a>
           </li>
         <% } %>
-        </ul>
+    </ul>
+
+  </div>
+</div>
+
+  
+
+
+  <div class="hero min-h-screen bg-base-200">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <div class="text-center lg:text-left">
+        <h1 class="text-5xl font-bold">Add New Account</h1>
+        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      </div>
+      <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div class="card-body">
+          <form action="/account/createAccount" method="POST">
+            <div class="form-control">
+              <label class="label">
+                <span class="label-text">Account Name</span>
+              </label>
+              <input type="text" placeholder="Account Name" class="input input-bordered" id="accountName" name="accountName" />
+            </div>
+            <div class="form-control mt-6">
+              <button class="btn btn-primary" type="submit" value="Upload">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-    <div class="mt-5">
-            <h2>Add new account</h2>
-            <form action="/account/createAccount" method="POST">
-              <div class="mb-3">
-                  <label for="title" class="form-label">Account Name</label>
-                  <input type="text" class="form-control" id="accountName" name="accountName">
-              </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            </form>
-    </div>
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/profile">Return to Profile</a>
+
+    <div class="bottom-btn-section">
+      <a class="btn btn-primary bottom-btn" href="/profile">Return to Profile</a>
     </div>
 <%- include('partials/footer') -%>

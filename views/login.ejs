@@ -1,8 +1,8 @@
 <%- include('partials/header') -%>
 
-<main class="container">
-  <div class="row justify-content-center">
-    <section class="col-6 mt-5">
+
+  <div class="hero min-h-screen" style="background-image: url(https://images.unsplash.com/photo-1543458113-18eaab9bcd3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">>
+    <section class="form-control login-form">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
       <% }) %> <% } %> <% if (locals.messages.info) { %> <%
@@ -10,7 +10,7 @@
       <div class="alert alert-info"><%= el.msg %></div>
       <% }) %> <% } %>
       <form action="/login" method="POST">
-        <div class="mb-3">
+        <div>
           <label for="exampleInputEmail1" class="form-label"
             >Email address</label
           >
@@ -35,6 +35,6 @@
       </form>
     </section>
   </div>
-</main>
+
 
 <%- include('partials/footer') -%>

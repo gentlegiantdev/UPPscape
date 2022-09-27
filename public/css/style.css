@@ -1,0 +1,14 @@
+.drawer-content, .bottom-btn-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-btn {
+    margin: 2em;
+}
+
+.login-form {
+    max-width: 400px;
+    background-color: rgba(255,255,255,.8);
+}

@@ -1,56 +1,98 @@
 <%- include('partials/header') -%>
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
+
+  <div>
+    <div>
+      <ul>
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <span>Last Serviced: <%= posts[i].lastServicedDate%></span>
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].plantImage%>">
-            </a>
-            <span><%= posts[i].plantSize%></span>
-            <span><%= posts[i].currentPlant%></span>
-            <span>Location #: <%= posts[i].locationNumber%></span>
-            <span>Building: <%= posts[i].building%></span>
-            <span>Floor: <%= posts[i].floor%></span>
+          <li class="">
+            <div class="card lg:card-side bg-base-100 shadow-xl">
+              <figure><img class="img-fluid" src="<%= posts[i].plantImage%>"></figure>
+              <div class="card-body">
+                <h2 class="card-title">Last Serviced: <%= posts[i].lastServicedDate%></h2>
+              
+          
+                <span>Plant: <%= posts[i].currentPlant%></span>
+                <span>Size: <%= posts[i].plantSize%></span>
+                <span>Location #: <%= posts[i].locationNumber%></span>
+                <span>Building: <%= posts[i].building%></span>
+                <span>Floor: <%= posts[i].floor%></span>
+
+                <div class="card-actions justify-end">
+                  <button class="btn btn-primary"><a href="/post/<%= posts[i]._id%>">More Info</a></button>
+                </div>
+                
+              </div>
+            </div>
           </li>
         <% } %>
         </ul>
     </div>
   </div>
-  <div class="mt-5">
+
+<div class="form-control">
+  <label class="label">
+    <span class="label-text">Your Email</span>
+  </label>
+  <label class="input-group">
+    <span>Email</span>
+    <input type="text" placeholder="info@site.com" class="input input-bordered" />
+  </label>
+</div>
+
+  <div class="form-control">
             <h2>Add a plant location</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
                   <input type="hidden" class="form-control" id="account" name="account"  value="<%= account_id %>" > 
               </div>
               <div class="mb-3">
-                  <label for="building" class="form-label">building</label>
-                  <input type="text" class="form-control" id="building" name="building" > 
+                  <label for="building" class="label-text">Building</label>
+                  <label class="input-group">
+                    <span>Building #</span>
+                    <input type="text" class="form-control" id="building" name="building" > 
+                </label>
               </div>
               <div class="mb-3">
-                  <label for="floor" class="form-label">floor</label>
-                  <input type="text" class="form-control" id="floor" name="floor">
+                  <label for="floor" class="label-text">Floor</label>
+                  <label class="input-group">
+                    <span>Floor #</span>
+                    <input type="text" class="form-control" id="floor" name="floor">
+                  </label>
               </div>
               <div class="mb-3">
-                  <label for="locationNumber" class="form-label">location number</label>
-                  <input type="text" class="form-control" id="locationNumber" name="locationNumber">
+                  <label for="locationNumber" class="label-text">Location</label>
+                  <label class="input-group">
+                    <span>Location #</span>
+                    <input type="text" class="form-control" id="locationNumber" name="locationNumber">
+                  </label>
               </div>
               <div class="mb-3">
-                  <label for="lightLevel" class="form-label">light level</label>
-                  <input type="text" class="form-control" id="lightLevel" name="lightLevel">
+                  <label for="lightLevel" class="label-text">Light Level</label>
+                  <label class="input-group">
+                    <span>Light Level</span>
+                    <input type="text" class="form-control" id="lightLevel" name="lightLevel">
+                  </label>
               </div>
               <div class="mb-3">
-                  <label for="currentPlant" class="form-label">current plant</label>
-                  <input type="text" class="form-control" id="currentPlant" name="currentPlant">
+                  <label for="currentPlant" class="label-text">Current Plant</label>
+                  <label class="input-group">
+                    <span>Current Plant</span>  
+                    <input type="text" class="form-control" id="currentPlant" name="currentPlant">
+                  </label>
               </div>
               <div class="mb-3">
-                  <label for="plantSize" class="form-label">plant size</label>
-                  <input type="text" class="form-control" id="plantSize" name="plantSize">
+                  <label for="plantSize" class="label-text">Plant Size</label>
+                  <label class="input-group">
+                    <span>Plant Size</span>
+                    <input type="text" class="form-control" id="plantSize" name="plantSize">
+                  </label>
               </div>
               <div class="mb-3">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
+                <label for="imgUpload" class="label-text">Plant Image</label>
+                <label class="input-group">
+                    <!-- <span>Building #</span> -->
+                  <input type="file" class="form-control" id="imageUpload" name="file">
+                </label>
               </div>
               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
             </form>

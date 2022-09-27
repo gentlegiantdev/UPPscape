@@ -1,30 +1,33 @@
 <%- include('partials/header') -%>
+
+
 <div class="container">
-  <div class="row justify-content-center mt-5">
-    <div class="col-6">
-      <h2><%= post.title %></h2>
-      <img class="img-fluid" src="<%= post.plantImage%>" />
-      <div class="row justify-content-between">
+  <div>
+    <div>
+      <div class="card lg:card-side bg-base-100 shadow-xl">
+        <figure><img src="<%= post.plantImage%>" alt="Plant"/></figure>
+        <div class="card-body">
+          <h2 class="card-title"><%= post.currentPlant%></h2>
           
             <span><%= post.plantSize%></span>
-            <span><%= post.currentPlant%></span>
             <span>Location #: <%= post.locationNumber%></span>
             <span>Building: <%= post.building%></span>
             <span>Floor: <%= post.floor%></span>
             <span>lightLevel: <%= post.lightLevel%></span>
             <span>Last Serviced: <%= post.lastServicedDate%></span>
             <form
-              class="col-1"
               action="/post/updatePostServiceDate/<%= post.id %>?_method=PUT"
               method="POST">
-              <button class="btn btn-primary" type="submit">Mark Serviced</button>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary" type="submit">Mark Serviced</button>
+              </div>
             </form>
         
       </div>
     </div>
-    <div class="col-6 mt-5">
-      <a class="btn btn-primary" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary" href="/accounts">Return to Accounts</a>
+    <div class="bottom-btn-section">
+      <a class="btn btn-primary bottom-btn" href="/profile">Return to Profile</a>
+      <a class="btn btn-primary bottom-btn" href="/accounts">Return to Accounts</a>
     </div>
   </div>
 </div>
