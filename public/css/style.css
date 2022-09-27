@@ -12,3 +12,17 @@
     max-width: 400px;
     background-color: rgba(255,255,255,.8);
 }
+
+.plant-image {
+    height: 12rem;
+    width: auto;
+}
+
+.card {
+    border: 1px solid rgb(233	225	62	);
+    border-radius: 10px;
+}
+
+.card-body {
+    background-color: rgb(246	246	195);    
+}
