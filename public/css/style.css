@@ -1,16 +1,24 @@
-.drawer-content, .bottom-btn-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.btn.btn-primary.add-btn  {
+    color: rgb(81	142	29		);
+    width: 6.5em;
+    margin-left: auto;
+}
+
+.btn.btn-primary.add-btn:hover, .btn.btn-primary.add-btn:active  {
+    color: white;
+
 }
 
 .bottom-btn {
     margin: 2em;
 }
 
+
 .login-form {
     max-width: 400px;
     background-color: rgba(255,255,255,.8);
+    border: 1px solid rgba(255,255,255,.9);
 }
 
 .plant-image {
@@ -25,4 +33,105 @@
 
 .card-body {
     background-color: rgb(246	246	195);    
+}
+
+
+a:link:hover, a:link:active {
+    color: white;
+}
+
+
+/* .btn.btn-primary {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+} */
+
+/* index.js*/
+
+.hero-h1 {
+    color: white;
+}
+
+.hero-p {
+    color: white;
+}
+
+.btn.btn-primary.index-btn > a.index-a  {
+    display: block;
+    width: 100px;
+    height: 100px;
+    line-height: 30px;
+}
+
+.btn.btn-primary.index-btn {
+    width: 70px;
+    height: 25px;
+}
+
+.btn.btn-primary.index-btn:hover > a.index-a:hover, .btn.btn-primary.index-btn > a.index-a:active  {
+    color: white;
+}
+
+/*login*/
+
+
+
+/*accounts*/
+
+a.account-name:hover, a.account-name:active {
+    color: rgb(81	142	29		);
+}
+
+.input-group .input-group-vertical * {
+    background-color: rgb(246	246	195);
+}
+
+.drawer-content, .bottom-btn-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.drawer-content  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+
+div.drawer-content > div  {
+    margin: .5em;
+}
+
+.drawer-side {
+    width: 150%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+}
+
+/*posts*/
+
+.add-location-section {
+    background-color: rgb(23	27	53		);
+    color: white;
+}
+
+.add-location-section > h2 {
+    color: rgb(246	246	195);
+    font-size: 2em;
+}
+
+div label.above-label, .add-location-btn {
+    color: rgb(246	246	195);
+}
+
+.btn.btn-primary.mark-serviced-btn {
+    color: rgb(81	142	29		);
+}
+
+.btn.btn-primary.mark-serviced-btn:hover, .btn.btn-primary.mark-serviced-btn:active  {
+    color: white;
 }

@@ -28,73 +28,62 @@
         </ul>
     </div>
   </div>
-
-<div class="form-control">
-  <label class="label">
-    <span class="label-text">Your Email</span>
-  </label>
-  <label class="input-group">
-    <span>Email</span>
-    <input type="text" placeholder="info@site.com" class="input input-bordered" />
-  </label>
-</div>
-
-  <div class="form-control">
+  <div class="form-control add-location-section">
             <h2>Add a plant location</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
                   <input type="hidden" class="form-control" id="account" name="account"  value="<%= account_id %>" > 
               </div>
               <div class="mb-3">
-                  <label for="building" class="label-text">Building</label>
+                  <label for="building" class="label-text above-label">Building</label>
                   <label class="input-group">
                     <span>Building #</span>
                     <input type="text" class="form-control" id="building" name="building" > 
                 </label>
               </div>
               <div class="mb-3">
-                  <label for="floor" class="label-text">Floor</label>
+                  <label for="floor" class="label-text above-label">Floor</label>
                   <label class="input-group">
                     <span>Floor #</span>
                     <input type="text" class="form-control" id="floor" name="floor">
                   </label>
               </div>
               <div class="mb-3">
-                  <label for="locationNumber" class="label-text">Location</label>
+                  <label for="locationNumber" class="label-text above-label">Location</label>
                   <label class="input-group">
                     <span>Location #</span>
                     <input type="text" class="form-control" id="locationNumber" name="locationNumber">
                   </label>
               </div>
               <div class="mb-3">
-                  <label for="lightLevel" class="label-text">Light Level</label>
+                  <label for="lightLevel" class="label-text above-label">Light Level</label>
                   <label class="input-group">
                     <span>Light Level</span>
                     <input type="text" class="form-control" id="lightLevel" name="lightLevel">
                   </label>
               </div>
               <div class="mb-3">
-                  <label for="currentPlant" class="label-text">Current Plant</label>
+                  <label for="currentPlant" class="label-text above-label">Current Plant</label>
                   <label class="input-group">
                     <span>Current Plant</span>  
                     <input type="text" class="form-control" id="currentPlant" name="currentPlant">
                   </label>
               </div>
               <div class="mb-3">
-                  <label for="plantSize" class="label-text">Plant Size</label>
+                  <label for="plantSize" class="label-text above-label">Plant Size</label>
                   <label class="input-group">
                     <span>Plant Size</span>
                     <input type="text" class="form-control" id="plantSize" name="plantSize">
                   </label>
               </div>
               <div class="mb-3">
-                <label for="imgUpload" class="label-text">Plant Image</label>
+                <label for="imgUpload" class="label-text above-label">Plant Image</label>
                 <label class="input-group">
                     <!-- <span>Building #</span> -->
                   <input type="file" class="form-control" id="imageUpload" name="file">
                 </label>
               </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+              <button type="submit" class="btn btn-primary add-location-btn" value="Upload">Submit</button>
             </form>
           </div>
       </div>  
