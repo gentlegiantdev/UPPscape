@@ -58,7 +58,7 @@ module.exports = {
       await Post.findOneAndUpdate(
         { _id: req.params.id },
         {
-         lastServicedDate: new Date(0) 
+          $currentDate: { lastServicedDate: true},
         },
       );
       console.log("New service timestamp logged.");
