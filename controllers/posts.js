@@ -48,7 +48,7 @@ module.exports = {
       });
       console.log("Post has been added!");
       console.log(req.body);
-      res.redirect("/accounts");
+      res.redirect(`/accounts`);
     } catch (err) {
       console.log(err);
     }
