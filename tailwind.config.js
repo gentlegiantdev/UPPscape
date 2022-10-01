@@ -3,6 +3,10 @@ module.exports = {
     daisyui: {
     themes: ["lemonade",],
   },
+  plugins: [
+    require('tailwindcss'),
+    require('autoprefixer'),
+  ]
 }
 
 
