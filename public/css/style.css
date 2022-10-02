@@ -23,7 +23,7 @@
 
 .plant-image {
     height: 12rem;
-    width: 12rem;
+    width: auto;
 }
 
 .card {
@@ -132,7 +132,7 @@ div label.above-label, .add-location-btn {
     color: rgb(81	142	29		);
 }
 
-.btn.btn-primary.mark-serviced-btn:hover, .btn.btn-primary.mark-serviced-btn:active, .btn.btn-primary.more-info-btn:hover, .btn.btn-primary.more-info-btn:active {
+.btn.btn-primary.mark-serviced-btn:hover, .btn.btn-primary.mark-serviced-btn:active  {
     color: white;
 }
 
