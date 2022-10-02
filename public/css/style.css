@@ -135,3 +135,10 @@ div label.above-label, .add-location-btn {
 .btn.btn-primary.mark-serviced-btn:hover, .btn.btn-primary.mark-serviced-btn:active, .btn.btn-primary.more-info-btn:hover, .btn.btn-primary.more-info-btn:active {
     color: white;
 }
+
+/* Feed */
+
+ .input-group span {
+    background-color: rgb(200	200	200	);
+    padding: .5em;
+}
