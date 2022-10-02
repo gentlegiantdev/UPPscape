@@ -49,7 +49,11 @@ module.exports = {
       console.log("Post has been added!");
       console.log(req.body);
 <<<<<<< HEAD
+<<<<<<< HEAD
       res.redirect(`/feed/${req.body.account}`);
+=======
+      res.redirect("/accounts");
+>>>>>>> parent of 6658a0b (chore: final styling for mvp)
 =======
       res.redirect("/accounts");
 >>>>>>> parent of 6658a0b (chore: final styling for mvp)
