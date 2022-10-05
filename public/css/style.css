@@ -23,7 +23,7 @@
 
 .plant-image {
     height: 12rem;
-    width: auto;
+    width: 12rem;
 }
 
 .card {
@@ -112,7 +112,7 @@ div.drawer-content > div  {
     
 }
 
-/*posts*/
+/*locations feed*/
 
 .add-location-section {
     background-color: rgb(23	27	53		);
@@ -127,6 +127,14 @@ div.drawer-content > div  {
 div label.above-label, .add-location-btn {
     color: rgb(246	246	195);
 }
+
+.btn.btn-primary.add-location-btn {
+    border-color: rgb(246	246	195);
+}
+
+/* .btn.btn-primary.add-location-btn:hover {
+    border: none;
+} */
 
 .btn.btn-primary.mark-serviced-btn {
     color: rgb(81	142	29		);
