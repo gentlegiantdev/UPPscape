@@ -150,3 +150,14 @@ div label.above-label, .add-location-btn {
     background-color: rgb(200	200	200	);
     padding: .5em;
 }
+
+
+/*Footer*/
+
+.email-ask-section {
+    background-color: rgb(226,226,226	);
+}
+
+.email-input-section {
+    padding-bottom: .5em;
+}
