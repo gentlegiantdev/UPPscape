@@ -74,14 +74,43 @@ a:link:hover, a:link:active {
     color: white;
 }
 
-/*login*/
+/*new company*/
+
+.new-company-steps {
+    color: #ffffff;
+    margin-bottom: 2em;
+}
+
+.step-current {
+    text-shadow: 2px 2px 2px  rgb(81	142	29		);
+    font-size: 1.3em;
+    /* text-decoration: underline;
+    text-decoration-color: rgb(81	142	29		); */
+}
+.skip-step-section {
+    margin: 2em 0;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
 
 
+.btn.btn-success.skip-step-btn {
+    margin: 1em 0;
+    width: auto;
+}
+
+.btn.btn-success.skip-step-btn:hover, .btn.btn-success.skip-step-btn:active  {
+    background-color: rgb(81	142	29		);
+}
 
 /*accounts*/
 
 a.account-name:hover, a.account-name:active {
-    color: rgb(81	142	29		);
+    text: rgb(81	142	29		);
 }
 
 .input-group .input-group-vertical * {

@@ -2,11 +2,10 @@ const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 
 const CompanySchema = new mongoose.Schema({
-  companyName: { type: String, unique: true },
+  companyName: { type: String, unique: false },
   email: { type: String, unique: true },
-  password: String,},
-// { collection: 'companies'}
-);
+  password: String,
+});
 
 // Password hash middleware.
 

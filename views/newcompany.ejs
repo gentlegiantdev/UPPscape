@@ -13,6 +13,12 @@
                     <% }) %>    
                 <% } %>
 
+              <ul class="steps steps-vertical lg:steps-horizontal new-company-steps">
+                <li class="step step-primary step-current">Create New Company</li>
+                <li class="step step">Add New User(s)</li>
+                <li class="step">Start UPPing Your Plantscaping Game!</li>
+              </ul>
+          
               <div class="form-control login-form">
                 <form action="/newcompany" method="POST">
                     <div class="mb-3">
@@ -32,11 +38,15 @@
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="companyConfirmPassword" name="companyConfirmPassword">
                       </div>
-                    <button type="submit" class="btn btn-primary add-btn">Submit</button>
+                    <button type="submit" class="btn btn-primary add-btn">Submit</button> 
                   </form>
               </div>
-            </section>
+              <div class="skip-step-section">
+                <span>Are you a new user for an already-existing company?</span>
+                <a class="btn btn-success skip-step-btn" href="/signup" class="index-a"> Skip This Step</a>
+              </div>
+            </section>          
         </div>
- 
+        
 
-<!-- <%- include('partials/footer') -%> -->
+<%- include('partials/footer') -%>
