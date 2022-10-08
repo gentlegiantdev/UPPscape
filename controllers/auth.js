@@ -1,6 +1,7 @@
 const passport = require("passport");
 const validator = require("validator");
 const User = require("../models/User");
+const Company = require("../models/Company");
 
 exports.getLogin = (req, res) => {
   if (req.user) {
@@ -115,4 +116,67 @@ exports.postSignup = (req, res, next) => {
       });
     }
   );
+}
+
+
+  exports.getNewCompany = (req, res) => {
+    // if (req.user.company) {
+    //   return res.redirect("/signup");
+    // }
+    res.render("newcompany", {
+      title: "Create New Company",
+    });
+  };
+
+  exports.postNewCompany = (req, res, next) => {
+  const validationErrors = [];
+  if (!validator.isEmail(req.body.email))
+    validationErrors.push({ msg: "Please enter a valid email address." });
+  if (!validator.isLength(req.body.password, { min: 8 }))
+    validationErrors.push({
+      msg: "Password must be at least 8 characters long",
+    });
+  if (req.body.password !== req.body.companyConfirmPassword)
+    validationErrors.push({ msg: "Passwords do not match" });
+
+  if (validationErrors.length) {
+    req.flash("errors", validationErrors);
+    return res.redirect("../signup");
+  }
+  req.body.email = validator.normalizeEmail(req.body.email, {
+    gmail_remove_dots: false,
+  });
+
+  const company = new Company ({
+    companyName: req.body.companyName,
+    email: req.body.email,
+    password: req.body.password,
+  });
+
+  Company.findOne(
+    { $or: [{ email: req.body.email }, { companyName: req.body.companyName }] },
+    (err, existingCompany) => {
+      if (err) {
+        return next(err);
+      }
+      if (existingCompany) {
+        req.flash("errors", {
+          msg: "Account with that email address or company name already exists.",
+        });
+        return res.redirect("../newcompany");
+      }
+      company.save((err) => {
+        if (err) {
+          return next(err);
+        }
+        req.logIn(company, (err) => {
+          if (err) {
+            return next(err);
+          }
+          res.redirect("../signup");
+        });
+      });
+    }
+  );
+
 };

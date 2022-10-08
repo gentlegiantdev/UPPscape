@@ -1,0 +1,42 @@
+<%- include('partials/header') -%>
+   
+        <div class="hero min-h-screen" style="background-image: url(https://images.unsplash.com/photo-1531249907576-b078dcbcbd28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=873&q=80);">
+            <section>
+                <% if (locals.messages.errors) { %>
+                    <% messages.errors.forEach( el => { %>
+                        <div class="alert alert-danger"><%= el.msg %></div>
+                    <% }) %>    
+                <% } %>
+                <% if (locals.messages.info) { %>
+                    <% messages.info.forEach( el => { %>
+                        <div class="alert alert-info"><%= el.msg %></div>
+                    <% }) %>    
+                <% } %>
+
+              <div class="form-control login-form">
+                <form action="/newcompany" method="POST">
+                    <div class="mb-3">
+                        <label for="companyName" class="form-label">Company Name</label>
+                        <input type="text" class="form-control" id="companyName" name="companyName">
+                      </div>
+                    <div class="mb-3">
+                      <label for="exampleInputEmail2" class="form-label">Company Email address</label>
+                      <input type="email" class="form-control" id="companyEmail" aria-describedby="emailHelp" name="email">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="companyPassword" name="password">
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="companyConfirmPassword" name="companyConfirmPassword">
+                      </div>
+                    <button type="submit" class="btn btn-primary add-btn">Submit</button>
+                  </form>
+              </div>
+            </section>
+        </div>
+ 
+
+<!-- <%- include('partials/footer') -%> -->
