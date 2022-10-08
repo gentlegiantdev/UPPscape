@@ -123,7 +123,7 @@ exports.postSignup = (req, res, next) => {
     // if (req.user.company) {
     //   return res.redirect("/signup");
     // }
-    res.render("/newcompany", {
+    res.render("newcompany", {
       title: "Create New Company",
     });
   };
@@ -136,7 +136,7 @@ exports.postSignup = (req, res, next) => {
     validationErrors.push({
       msg: "Password must be at least 8 characters long",
     });
-  if (req.body.password !== req.body.confirmPassword)
+  if (req.body.password !== req.body.companyConfirmPassword)
     validationErrors.push({ msg: "Passwords do not match" });
 
   if (validationErrors.length) {
@@ -161,7 +161,7 @@ exports.postSignup = (req, res, next) => {
       }
       if (existingCompany) {
         req.flash("errors", {
-          msg: "Account with that email address or copmany name already exists.",
+          msg: "Account with that email address or company name already exists.",
         });
         return res.redirect("../newcompany");
       }
@@ -173,7 +173,7 @@ exports.postSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect("/signup");
+          res.redirect("../signup");
         });
       });
     }

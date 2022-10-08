@@ -4,8 +4,9 @@ const mongoose = require("mongoose");
 const CompanySchema = new mongoose.Schema({
   companyName: { type: String, unique: true },
   email: { type: String, unique: true },
-  password: String,
-});
+  password: String,},
+// { collection: 'companies'}
+);
 
 // Password hash middleware.
 
