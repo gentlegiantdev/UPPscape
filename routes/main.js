@@ -18,5 +18,8 @@ router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 router.get("/newcompany", authController.getNewCompany);
 router.post("/newcompany", authController.postNewCompany);
+router.get("/companylogin", authController.getCompanyLogin);
+router.post("/companylogin", authController.postCompanyLogin);
+
 
 module.exports = router;

@@ -1,0 +1,40 @@
+<%- include('partials/header') -%>
+
+
+  <div class="hero min-h-screen" style="background-image: url(https://images.unsplash.com/photo-1543458113-18eaab9bcd3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">>
+    <section class="form-control login-form">
+      <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+      <div class="alert alert-danger"><%= el.msg %></div>
+      <% }) %> <% } %> <% if (locals.messages.info) { %> <%
+      messages.info.forEach( el => { %>
+      <div class="alert alert-info"><%= el.msg %></div>
+      <% }) %> <% } %>
+      <form action="/companylogin" method="POST">
+        <div>
+          <label for="companyLoginEmail" class="form-label"
+            >Email address</label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="companyLoginEmail"
+            aria-describedby="emailHelp"
+            name="email"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="companyLoginPassword" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="companyLoginPassword"
+            name="password"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary add-btn">Submit</button>
+      </form>
+    </section>
+  </div>
+
+
+<%- include('partials/footer') -%>

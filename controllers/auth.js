@@ -66,7 +66,7 @@ exports.getSignup = (req, res) => {
   });
 };
 
-exports.postSignup = (req, res, next) => {
+exports.postSignup = (req, res, next, company) => {
   const validationErrors = [];
   if (!validator.isEmail(req.body.email))
     validationErrors.push({ msg: "Please enter a valid email address." });
@@ -89,6 +89,8 @@ exports.postSignup = (req, res, next) => {
     userName: req.body.userName,
     email: req.body.email,
     password: req.body.password,
+    userCompany: req.body.userCompany,
+    companyPassword: req.body.companyPassword,
   });
 
   User.findOne(
@@ -179,4 +181,47 @@ exports.postSignup = (req, res, next) => {
     }
   );
 
+};
+
+
+exports.getCompanyLogin = (req, res) => {
+  if (req.companyName) {
+    return res.redirect("/signup");
+  }
+  res.render("companylogin", {
+    title: "Company Login",
+  });
+};
+
+exports.postCompanyLogin = (req, res, next) => {
+  const validationErrors = [];
+  if (!validator.isEmail(req.body.email))
+    validationErrors.push({ msg: "Please enter a valid email address." });
+  if (validator.isEmpty(req.body.password))
+    validationErrors.push({ msg: "Password cannot be blank." });
+
+  if (validationErrors.length) {
+    req.flash("errors", validationErrors);
+    return res.redirect("/companylogin");
+  }
+  req.body.email = validator.normalizeEmail(req.body.email, {
+    gmail_remove_dots: false,
+  });
+
+  passport.authenticate("local", (err, company, info) => {
+    if (err) {
+      return next(err);
+    }
+    if (!company) {
+      req.flash("errors", info);
+      return res.redirect("/companylogin");
+    }
+    req.logIn(company, (err) => {
+      if (err) {
+        return next(err);
+      }
+      req.flash("success", { msg: "Success! Your company is logged in." });
+      res.redirect(req.session.returnTo || "/signup");
+    });
+  })(req, res, next);
 };
