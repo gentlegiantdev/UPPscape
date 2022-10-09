@@ -12,14 +12,14 @@
                         <div class="alert alert-info"><%= el.msg %></div>
                     <% }) %>    
                 <% } %>
-              <ul class="steps steps-vertical lg:steps-horizontal new-company-steps">
-                <li class="step step-primary">Create New Company</li>
-                <li class="step step-primary step-current">Add New User(s)</li>
-                <li class="step">Start UPPing Your Plantscaping Game!</li>
-              </ul>
 
               <div class="form-control login-form">
                 <form action="/signup" method="POST">
+                    <div class="mb-3">
+                        <label for="userCompany" class="form-label">Company</label>
+                        <input type="text" class="form-control" id="userCompany" name="userCompany">
+                        <div id="companyHelp" class="form-text">Be sure to format same as your other team members.</div>
+                      </div>
                     <div class="mb-3">
                         <label for="userName" class="form-label">User Name</label>
                         <input type="text" class="form-control" id="userName" name="userName">

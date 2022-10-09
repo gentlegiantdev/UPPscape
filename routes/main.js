@@ -16,11 +16,7 @@ router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
-router.get("/newcompany", authController.getCompanySignup);
-router.post("/newcompany", authController.postCompanySignup);
-router.get("/companylogin", authController.getCompanyLogin);
-router.post("/companylogin", authController.postCompanyLogin);
-router.get("/midpoint", authController.getMidpoint);
+
 
 
 module.exports = router;
