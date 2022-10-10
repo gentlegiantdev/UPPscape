@@ -22,9 +22,128 @@
                 <button class="btn btn-primary mark-serviced-btn" type="submit">Mark Serviced</button>
               </div>
             </form>
-        
       </div>
     </div>
+    <div>
+        <div>
+          <ul>
+            <% for(var i=0; i<notes.length; i++) {%>
+              <li class="">
+                <div class="card lg:card-side bg-base-100 shadow-xl">
+                  <!-- <figure><img class="plant-image" src="<%= posts[i].plantImage%>"></figure> -->
+                  <div class="card-body">
+                    <h2 class="card-title"> Note by <%= posts[i].lastServicedDate%></h2>
+                  
+              
+                    <span>Plant: <%= posts[i].currentPlant%></span>
+                    <span>Size: <%= posts[i].plantSize%></span>
+                    <span>Location #: <%= posts[i].locationNumber%></span>
+                    <span>Building: <%= posts[i].building%></span>
+                    <span>Floor: <%= posts[i].floor%></span>
+
+                    <div class="card-actions justify-end">
+                      <a class="btn btn-primary" href="/post/<%= posts[i]._id%>">More Info</a>
+                    </div>
+                    
+                  </div>
+                </div>
+              </li>
+            <% } %>
+            </ul>
+        </div>
+    </div>
+    <div class="form-control add-location-section">
+            <h2>Add a note about this location</h2>
+            <form action="/note/createNote" method="POST">
+              <div class="mb-3">
+                  <input type="hidden" class="form-control" id="notePost" name="post"  value="<%= post.id %>" > 
+              </div>
+              <div class="mb-3">
+                  <input type="hidden" class="form-control" id="addedBy" name="addedBy"  value="<%= user.userName %>" > 
+              </div>
+              <div class="mb-3">
+                  <input type="hidden" class="form-control" id="dateAdded" name="addedBy"  value="" > 
+              </div>
+              <div class="mb-3">
+                  <label for="noteText" class="label-text above-label">Note Text</label>
+                  <label class="input-group">
+                    <span>Note:</span>
+                    <textarea class="form-control" id="noteText" name="noteText" >
+                    </textarea>
+                </label>
+              </div>
+              <div class="mb-3">
+                  <label for="source" class="label-text above-label">Who brought this to your attention?</label>
+                  <label class="input-group">
+                    <span>Source</span>
+                    <input type="text" class="form-control" id="source" name="source">
+                  </label>
+              </div>
+              <div class="mb-3">
+                  <label for="sourceType" class="label-text above-label">Source Type</label>
+                  <label class="input-group">
+                    <span>Source Type:</span>
+                    <select class="form-control" id="sourceType" name="sourceType">
+                      <option value="self">Self</option>
+                      <option value="serviceManager">Service Manager</option>
+                      <option value="propertyManager">Property Manager</option>
+                      <option value="accountEmployee">Employee at the Account</option>
+                      <option value="other">Other</option>
+                    </select>
+                    </select>
+                  </label>
+              </div>
+              <div class="mb-3">
+                  <label for="concern" class="label-text above-label">Leave checked if this is a concern.</label>
+                <label class="cursor-pointer label concern-section">
+                  <span class="label-text">Concern?</span>
+                  <input type="checkbox" checked="checked" class="checkbox checkbox-accent checkbox-lg" id="concern" name="concern"/>
+                </label>
+              </div>
+              <div class="mb-3">
+                  <label for="concernType" class="label-text above-label">What type of concern?</label>
+                  <label class="input-group">
+                    <span>Concern Type</span>  
+                    <select class="form-control" id="concernType" name="concernType">
+                      <option value="pest">Pest</option>
+                      <option value="watering">Watering</option>
+                      <option value="crashing">Plant is crashing</option>
+                      <option value="employee">Employees at the Account are causing problems</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </label>
+              </div>
+              <div class="mb-3">
+                  <label for="concernLevel" class="label-text above-label">What level is this concern (5 being highest)?</label>
+                  <label class="input-group">
+                    <span>Concern Level</span>
+                    <select class="form-control" id="concernLevel" name="concernLevel">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </label>
+              </div>
+              <div class="mb-3">
+                  <label for="immediacyLevel" class="label-text above-label">How soon does this need to be dealt with? (5 being soonest)?</label>
+                  <label class="input-group">
+                    <span>Immediacy Level</span>
+                    <select class="form-control" id="immediacyLevel" name="immediacyLevel">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+                  </label>
+              </div>
+             
+              <button type="submit" class="btn btn-primary add-location-btn" value="Upload">Submit</button>
+            </form>
+          </div>
+    </div>  
     <div class="bottom-btn-section">
       <a class="btn btn-primary bottom-btn" href="/profile">Return to Profile</a>
       <a class="btn btn-primary bottom-btn" href="/accounts">Return to Accounts</a>
