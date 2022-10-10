@@ -29,20 +29,22 @@
           <ul>
             <% for(var i=0; i<notes.length; i++) {%>
               <li class="">
-                <div class="card lg:card-side bg-base-100 shadow-xl">
-                  <!-- <figure><img class="plant-image" src="<%= posts[i].plantImage%>"></figure> -->
-                  <div class="card-body">
-                    <h2 class="card-title"> Note by <%= posts[i].lastServicedDate%></h2>
-                  
+                <div class="card note lg:card-side bg-base-100 shadow-xl">
               
-                    <span>Plant: <%= posts[i].currentPlant%></span>
-                    <span>Size: <%= posts[i].plantSize%></span>
-                    <span>Location #: <%= posts[i].locationNumber%></span>
-                    <span>Building: <%= posts[i].building%></span>
-                    <span>Floor: <%= posts[i].floor%></span>
+                  <div class="card-body note-card">
+                    <h2 class="card-title"> Note by <%= notes[i].addedBy[0]%></h2>
+                  
+                    <span>Date: <%= notes[i].dateAdded%></span>
+                    <span>Note: <%= notes[i].noteText%></span>
+                    <span>Source: <%= notes[i].source%></span>
+                    <span>Source Type: <%= notes[i].sourceType%></span>
+                    <span>Concern? <%= notes[i].concern%></span>
+                    <span>Concern Type: <%= notes[i].concernType%></span>
+                    <span>Concern Level: <%= notes[i].concernLevel%></span>
+                     <span>Immediacy Level: <%= notes[i].immediacyLevel%></span>
 
                     <div class="card-actions justify-end">
-                      <a class="btn btn-primary" href="/post/<%= posts[i]._id%>">More Info</a>
+                      
                     </div>
                     
                   </div>
@@ -97,7 +99,7 @@
                   <label for="concern" class="label-text above-label">Leave checked if this is a concern.</label>
                 <label class="cursor-pointer label concern-section">
                   <span class="label-text">Concern?</span>
-                  <input type="checkbox" checked="checked" class="checkbox checkbox-accent checkbox-lg" id="concern" name="concern"/>
+                  <input type="checkbox" checked="checked" class="checkbox checkbox-secondary checkbox-lg" id="concern" name="concern"/>
                 </label>
               </div>
               <div class="mb-3">
