@@ -9,6 +9,9 @@ const AccountSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  userCompany: {
+   type: String,
+  },
 });
 
 module.exports = mongoose.model("Account", AccountSchema);

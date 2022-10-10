@@ -5,7 +5,7 @@ module.exports = {
   getAccounts: async (req, res) => {
     try {
       const accounts = await Account.find().collation({locale:'en',strength: 2}).sort({accountName:1}).lean();
-      res.render("accounts.ejs", { accounts: accounts });
+      res.render("accounts.ejs", { accounts: accounts, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -15,6 +15,7 @@ module.exports = {
 
       await Account.create({
         accountName: req.body.accountName,
+        userCompany: req.body.userCompany,
       });
       console.log("Account has been added!");
       res.redirect("/accounts");

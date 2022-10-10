@@ -41,6 +41,9 @@
         <div class="card-body">
           <form action="/account/createAccount" method="POST">
             <div>
+              <div class="mb-3">
+                  <input type="hidden" class="form-control" id="accountUserCompany" name="userCompany"  value="<%= user.userCompany %>" > 
+              </div>
               <label class="label">
                 <span class="label-text">Account Name</span>
               </label>
