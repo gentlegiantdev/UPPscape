@@ -29,10 +29,10 @@
             <h2>Add a note about this location</h2>
             <form action="/post/createNote" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
-                  <input type="hidden" class="form-control" id="notePost" name="post"  value="<%= req.id %>" > 
+                  <input type="hidden" class="form-control" id="notePost" name="post"  value="<%= post.id %>" > 
               </div>
               <div class="mb-3">
-                  <input type="hidden" class="form-control" id="addedBy" name="addedBy"  value="<%= req.user.id %>" > 
+                  <input type="hidden" class="form-control" id="addedBy" name="addedBy"  value="<%= user.userName %>" > 
               </div>
               <div class="mb-3">
                   <input type="hidden" class="form-control" id="dateAdded" name="addedBy"  value="" > 
