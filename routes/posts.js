@@ -15,8 +15,5 @@ router.delete("/deletePost/:id", postsController.deletePost);
 
 router.put("/updatePostServiceDate/:id", postsController.updatePostServiceDate);
 
-router.post("/createNote", postsController.createNote);
-
-router.delete("/deleteNote/:id", postsController.deleteNote);
 
 module.exports = router;

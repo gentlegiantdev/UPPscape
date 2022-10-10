@@ -14,14 +14,14 @@ const NoteSchema = new mongoose.Schema({
    type: String,
   },
   addedBy: {
-   type: String,
+   type: Array,
   },
   dateAdded: {
     type: Date,
     default: Date.now,
   },
   concern: {
-   type: Boolean,
+   type: String,
   },
   concernType: {
    type: String,

@@ -22,12 +22,39 @@
                 <button class="btn btn-primary mark-serviced-btn" type="submit">Mark Serviced</button>
               </div>
             </form>
-        
       </div>
+    </div>
+    <div>
+        <div>
+          <ul>
+            <% for(var i=0; i<notes.length; i++) {%>
+              <li class="">
+                <div class="card lg:card-side bg-base-100 shadow-xl">
+                  <!-- <figure><img class="plant-image" src="<%= posts[i].plantImage%>"></figure> -->
+                  <div class="card-body">
+                    <h2 class="card-title"> Note by <%= posts[i].lastServicedDate%></h2>
+                  
+              
+                    <span>Plant: <%= posts[i].currentPlant%></span>
+                    <span>Size: <%= posts[i].plantSize%></span>
+                    <span>Location #: <%= posts[i].locationNumber%></span>
+                    <span>Building: <%= posts[i].building%></span>
+                    <span>Floor: <%= posts[i].floor%></span>
+
+                    <div class="card-actions justify-end">
+                      <a class="btn btn-primary" href="/post/<%= posts[i]._id%>">More Info</a>
+                    </div>
+                    
+                  </div>
+                </div>
+              </li>
+            <% } %>
+            </ul>
+        </div>
     </div>
     <div class="form-control add-location-section">
             <h2>Add a note about this location</h2>
-            <form action="/post/createNote" enctype="multipart/form-data" method="POST">
+            <form action="/note/createNote" method="POST">
               <div class="mb-3">
                   <input type="hidden" class="form-control" id="notePost" name="post"  value="<%= post.id %>" > 
               </div>
@@ -58,7 +85,7 @@
                     <span>Source Type:</span>
                     <select class="form-control" id="sourceType" name="sourceType">
                       <option value="self">Self</option>
-                      <option value="sericeManager">Service Manager</option>
+                      <option value="serviceManager">Service Manager</option>
                       <option value="propertyManager">Property Manager</option>
                       <option value="accountEmployee">Employee at the Account</option>
                       <option value="other">Other</option>
@@ -91,11 +118,11 @@
                   <label class="input-group">
                     <span>Concern Level</span>
                     <select class="form-control" id="concernLevel" name="concernLevel">
-                      <option value="one">1</option>
-                      <option value="two">2</option>
-                      <option value="three">3</option>
-                      <option value="four">4</option>
-                      <option value="five">5</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
                     </select>
                   </label>
               </div>
@@ -104,11 +131,11 @@
                   <label class="input-group">
                     <span>Immediacy Level</span>
                     <select class="form-control" id="immediacyLevel" name="immediacyLevel">
-                      <option value="one">1</option>
-                      <option value="two">2</option>
-                      <option value="three">3</option>
-                      <option value="four">4</option>
-                      <option value="five">5</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
                     </select>
                   </label>
               </div>
