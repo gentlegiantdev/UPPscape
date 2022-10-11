@@ -69,6 +69,20 @@ module.exports = {
       console.log(err);
     }
   },
+  updateAllPostServiceDates: async (req, res) => {
+   try {
+      await Post.updateMany(
+        { _account: req.params.id },
+        {
+          $currentDate: { lastServicedDate: true},
+        },
+      );
+      console.log("New service timestamps logged.");
+      res.redirect(`/feed/${req.params.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
   likePost: async (req, res) => {
     try {
       await Post.findOneAndUpdate(

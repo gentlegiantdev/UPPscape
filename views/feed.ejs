@@ -20,7 +20,13 @@
                 <div class="card-actions justify-end">
                   <a class="btn btn-primary" href="/post/<%= posts[i]._id%>">More Info</a>
                 </div>
-                
+                <form
+                  action="/post/updateAllPostServiceDates/<%= account_id %>?_method=PUT"
+                  method="POST">
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary mark-serviced-btn mark-all-serviced-btn" type="submit">Mark All Serviced</button>
+                  </div>
+                </form>
               </div>
             </div>
           </li>
@@ -79,7 +85,6 @@
               <div class="mb-3">
                 <label for="imgUpload" class="label-text above-label">Plant Image</label>
                 <label class="input-group">
-                    <!-- <span>Building #</span> -->
                   <input type="file" class="form-control" id="imageUpload" name="file">
                 </label>
               </div>
