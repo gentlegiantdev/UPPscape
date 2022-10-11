@@ -76,6 +76,31 @@ a:link:hover, a:link:active {
     color: white;
 }
 
+/* about */
+div.about-div-1 {
+
+}
+
+.hero.min-h-screen.bg-base-200.about-div-2 {
+    background-color: rgb(234	234	119		);
+}
+
+.hero.min-h-screen.bg-base-200.about-div-3 {
+    background-color: rgb(81	142	29		);
+    color: rgb(234	234	119		);
+}
+
+.hero.min-h-screen.bg-base-200.about-div-4 {
+    background-color: rgb(219	252	179	);
+    color: rgb(81	142	29		);
+}
+
+.hero-content.text-center.text-neutral-content.about-div-5 {
+    color: rgb(234	234	119		);
+}
+
+
+
 /*new company*/
 
 .new-company-steps {
