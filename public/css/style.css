@@ -76,6 +76,26 @@ a:link:hover, a:link:active {
     color: white;
 }
 
+/* profile */
+
+.btn.btn-primary.profile-concern-btn {
+    margin-top: 4px;
+    color: rgb(237	173	172		);
+    background-color: rgb(75	0	5	);
+     border-color: rgb(84, 18, 23);
+     
+}
+
+.btn.btn-primary.profile-concern-btn:hover, .btn.btn-primary.profile-concern-btn:active {
+    margin-top: 4px;
+    color: rgb(229, 207, 207);
+    background-color: rgb(84, 18, 23);
+    border-color: rgb(84, 18, 23);
+     
+}
+
+
+
 /* about */
 div.about-div-1 {
 
@@ -99,7 +119,37 @@ div.about-div-1 {
     color: rgb(234	234	119		);
 }
 
+/* concerns */
 
+.concerns-header {
+    background-color: rgb(81	142	29		);
+      color: rgb(234	234	119		);
+}
+
+.btn.btn-primary.concern-scroll-btn {
+    color: rgb(119, 182, 64);;
+    background-color: rgb(234	234	119		);
+    margin-top: 3em;
+}
+
+.btn.btn-primary.concern-scroll-btn:hover, .btn.btn-primary.concern-scroll-btn:active {
+    color: rgb(81	142	29		);
+    background-color: rgb(233	225	62	);
+}
+
+.concern-card-div {
+    margin-top: 3em;
+    margin-bottom: 0;
+}
+
+.concern-note-card {
+    border-radius: 10px;
+}
+
+.concerns-bottom-btn{
+    width: 10em;
+    margin: 0 2.5em 3em 2.5em;
+}
 
 /*new company*/
 

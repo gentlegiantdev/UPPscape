@@ -9,6 +9,8 @@ router.post("/createNote/", ensureAuth, notesController.createNote);
 
 router.get("/:id", ensureAuth, notesController.getNote);
 
+router.get("/concerns/:id", ensureAuth, notesController.getConcerns);
+
 router.delete("/deleteNote/:id", ensureAuth, notesController.deleteNote);
 
 module.exports = router;

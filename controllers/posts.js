@@ -1,7 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
 const Note = require("../models/Note");
-
+const Account = require("../models/Account");
 
 
 
@@ -9,7 +9,7 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id });
-      res.render("profile.ejs", { posts: posts, user: req.user});
+      res.render("profile.ejs", { posts: posts, user: req.user, userCompany:req.user.userCompany});
     } catch (err) {
       console.log(err);
     }
@@ -17,7 +17,8 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find({ account: req.params.id}).sort({ locationNumber: "asc" }).lean();
-      res.render("feed.ejs", { posts: posts, account_id: req.params.id });
+       const account = await Account.findById(req.params.id);
+      res.render("feed.ejs", { posts: posts, account_id: req.params.id, account: account  });
     } catch (err) {
       console.log(err);
     }
@@ -37,6 +38,7 @@ module.exports = {
       const result = await cloudinary.uploader.upload(req.file.path);
 
       await Post.create({
+        company: req.body.company,
         account: req.body.account,
         building: req.body.building,
         floor: req.body.floor,  

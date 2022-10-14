@@ -11,14 +11,16 @@
                   <div class="card-body note-card">
                     <h2 class="card-title"> Note by <%= note.addedBy[0]%></h2>
                   
-                    <span>Date: <%= note.dateAdded%></span>
+                    <span>Date: <%= note.dateAdded%></span>  
+                    <span>Location #: <%= note.location%></span>
+                    <span>Current Plant: <%= note.plantName%></span>
                     <span>Note: <%= note.noteText%></span>
                     <span>Source: <%= note.source%></span>
                     <span>Source Type: <%= note.sourceType%></span>
                     <span>Concern? <%= note.concern%></span>
                     <span>Concern Type: <%= note.concernType%></span>
                     <span>Concern Level: <%= note.concernLevel%></span>
-                     <span>Immediacy Level: <%= note.immediacyLevel%></span>
+                    <span>Immediacy Level: <%= note.immediacyLevel%></span>
 
                     <div class="card-actions justify-end">
                       

@@ -1,8 +1,17 @@
 const mongoose = require("mongoose");
 
 const NoteSchema = new mongoose.Schema({
+  company: {
+  type: String,
+  },
   post: {
   type: String,
+  },
+  location: {
+   type: String,
+  },
+  plantName: {
+   type: String,
   },
   noteText: {
    type: String,
@@ -21,7 +30,7 @@ const NoteSchema = new mongoose.Schema({
     default: Date.now,
   },
   concern: {
-   type: String,
+   type: Boolean,
   },
   concernType: {
    type: String,

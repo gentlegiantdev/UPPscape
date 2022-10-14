@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema({
+  company: {
+   type: String,
+  },
   account: {
    type: String,
   },

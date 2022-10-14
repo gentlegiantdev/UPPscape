@@ -9,7 +9,10 @@ createNote: async (req, res) => {
     try {
 
       await Note.create({
+        company: req.body.company,
         post: req.body.post,
+        location: req.body.location,
+        plantName: req.body.plantName,
         noteText: req.body.noteText,
         source: req.body.source,
         sourceType: req.body.sourceType,
@@ -52,5 +55,13 @@ createNote: async (req, res) => {
     }
   },
 
+  getConcerns: async (req, res) => {
+     try {
+      const notes = await Note.find({ concern: true }).sort({ createdAt: "desc" }).lean();
+      res.render("concerns.ejs", { notes: notes });
+    } catch (err) {
+      console.log(err);
+    }
+  },
 
 }
