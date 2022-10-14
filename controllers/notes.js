@@ -35,9 +35,20 @@ createNote: async (req, res) => {
       // Delete note from db
       await Note.remove({ _id: req.params.id });
       console.log("Deleted Note");
-      res.redirect(`/post/${req.params.id}`);
+      res.redirect(`/post/${note.post}`);
+      console.log(req.body);
     } catch (err) {
-      res.redirect(`/post/${req.params.id}`);
+      res.redirect(`/post/${note.post}`);
+    }
+  },
+
+   getNote: async (req, res) => {
+    try {
+      const note = await Note.findById(req.params.id);
+  
+      res.render("note.ejs", { note: note, note_id: req.params.id, post_id: req.params.post });
+    } catch (err) {
+      console.log(err);
     }
   },
 

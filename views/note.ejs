@@ -1,0 +1,47 @@
+<%- include('partials/header') -%>
+
+
+<div>
+        <div>
+          <ul>
+          
+              <li class="">
+                <div class="card note lg:card-side bg-base-100 shadow-xl">
+              
+                  <div class="card-body note-card">
+                    <h2 class="card-title"> Note by <%= note.addedBy[0]%></h2>
+                  
+                    <span>Date: <%= note.dateAdded%></span>
+                    <span>Note: <%= note.noteText%></span>
+                    <span>Source: <%= note.source%></span>
+                    <span>Source Type: <%= note.sourceType%></span>
+                    <span>Concern? <%= note.concern%></span>
+                    <span>Concern Type: <%= note.concernType%></span>
+                    <span>Concern Level: <%= note.concernLevel%></span>
+                     <span>Immediacy Level: <%= note.immediacyLevel%></span>
+
+                    <div class="card-actions justify-end">
+                      
+                    </div>
+                    <form
+                        action="/note/deleteNote/<%= note.id %>?_method=DELETE"
+                        method="POST"
+                        class="">
+                        <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                    </form>
+                     <div class="card-actions justify-end">
+                        <a class="btn btn-primary" href="/post/<%= note.post%>">Return to location</a>
+                      </div> 
+
+                  </div>
+                </div>
+              </li>
+      
+            </ul>
+        </div>
+    </div>
+        
+        
+          
+     
+<%- include('partials/footer') -%>

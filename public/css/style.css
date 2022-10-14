@@ -238,6 +238,10 @@ div label.above-label, .add-location-btn {
     right: 15px;
 }
 
+.btn-primary.fa.fa-trash:hover, .btn-primary.fa.fa-trash:active {
+    color: #ffffff;
+}
+
 .note-card {
     background-color: rgb(234	234	119		);
     margin-left: auto;

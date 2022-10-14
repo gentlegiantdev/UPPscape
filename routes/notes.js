@@ -7,6 +7,8 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 router.post("/createNote/", ensureAuth, notesController.createNote);
 
+router.get("/:id", ensureAuth, notesController.getNote);
+
 router.delete("/deleteNote/:id", ensureAuth, notesController.deleteNote);
 
 module.exports = router;
