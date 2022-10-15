@@ -4,6 +4,9 @@ const NoteSchema = new mongoose.Schema({
   company: {
   type: String,
   },
+  account: {
+  type: String,
+  },
   post: {
   type: String,
   },

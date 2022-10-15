@@ -10,6 +10,7 @@ createNote: async (req, res) => {
 
       await Note.create({
         company: req.body.company,
+        account: req.body.account,
         post: req.body.post,
         location: req.body.location,
         plantName: req.body.plantName,
