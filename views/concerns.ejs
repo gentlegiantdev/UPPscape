@@ -7,7 +7,7 @@
     </div>
   </div>
 </div>
-<div id="concerns-section" class="card lg:card-side card-body shadow-xl concern-card-div">
+<div id="concerns-section" class="concerns-section">
         <ul class="card-body">
         <% for(var i=0; i<notes.length; i++) {%>
           <li class="card-body note-card concern-note-card">
@@ -20,15 +20,16 @@
                     <span>Concern? <%= notes[i].concern%></span>
                     <span>Concern Type: <%= notes[i].concernType%></span>
                     <span>Concern Level: <%= notes[i].concernLevel%></span>
-                    <span>Immediacy Level: <%= notes[i].immediacyLevel%></span>           
+                    <span>Immediacy Level: <%= notes[i].immediacyLevel%></span>
+                     <a class="btn btn-primary" href="/note/<%= notes[i]._id%>">More Info</a>          
           </li>
         <% } %>
         </ul> 
-      </div> 
-
-<div class="row justify-content-center mt-5">
+         <div class="row justify-content-center mt-5" id="concerns-bottom-btn-section">
           <a class="btn btn-primary concerns-bottom-btn " href="/profile">Return to Profile</a>
           <a class="btn btn-primary concerns-bottom-btn " href="/accounts">Go to Accounts</a>
         </div> 
+      </div> 
+
 
 <%- include('partials/footer') -%>

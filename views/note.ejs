@@ -3,12 +3,9 @@
 
 <div>
         <div>
-          <ul>
-          
-              <li class="">
                 <div class="card note lg:card-side bg-base-100 shadow-xl">
               
-                  <div class="card-body note-card">
+                  <div class="card-body individual-note-card">
                     <h2 class="card-title"> Note by <%= note.addedBy[0]%></h2>
                   
                     <span>Date: <%= note.dateAdded%></span>  
@@ -31,15 +28,21 @@
                         class="">
                         <button class="btn btn-primary fa fa-trash" type="submit"></button>
                     </form>
+                    <form
+                      action="/note/removeconcern/<%= note.id %>?_method=PUT"
+                      method="POST">
+                        <button class="btn btn-primary mark-serviced-btn" id="remove-concern-btn" type="submit">Remove Concern</button>
+                      </div>
+                    </form>
+
                      <div class="card-actions justify-end">
-                        <a class="btn btn-primary" href="/post/<%= note.post%>">Return to location</a>
-                      </div> 
+                        <a class="btn btn-primary individual-note-link-btn1" href="/post/<%= note.post%>">Return to location</a>
+                        <a class="btn btn-primary individual-note-link-btn2" href="/note/concerns/<%= note.company%>">Return to Concerns</a>
+                    </div> 
 
                   </div>
                 </div>
-              </li>
-      
-            </ul>
+              
         </div>
     </div>
         

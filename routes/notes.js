@@ -11,6 +11,8 @@ router.get("/:id", ensureAuth, notesController.getNote);
 
 router.get("/concerns/:id", ensureAuth, notesController.getConcerns);
 
+router.put("/removeconcern/:id", ensureAuth, notesController.removeConcern);
+
 router.delete("/deleteNote/:id", ensureAuth, notesController.deleteNote);
 
 module.exports = router;

@@ -49,7 +49,8 @@ createNote: async (req, res) => {
     try {
       const note = await Note.findById(req.params.id);
   
-      res.render("note.ejs", { note: note, note_id: req.params.id, post_id: req.params.post });
+      res.render("note.ejs", { note: note, note_id: req.params.id, post_id: req.params.post, });
+      console.log(note);
     } catch (err) {
       console.log(err);
     }
@@ -59,6 +60,20 @@ createNote: async (req, res) => {
      try {
       const notes = await Note.find({ concern: true }).sort({ createdAt: "desc" }).lean();
       res.render("concerns.ejs", { notes: notes });
+      console.log(req.params);
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  removeConcern: async (req, res) => {
+   try {
+      await Note.findOneAndUpdate(
+        { _id: req.params.id },
+        { concern: false, concernLevel: 0, immediacyLevel: 0},
+      );
+      console.log("Concern has been resolved.");
+      res.redirect(`/note/${req.params.id}`);
     } catch (err) {
       console.log(err);
     }
