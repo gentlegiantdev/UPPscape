@@ -9,7 +9,9 @@
         <p><strong>Email</strong>: <%= user.email %></p>
         <a href="/logout" class="col-3 btn btn-primary">Logout</a>
         <a class="btn btn-primary" href="/accounts/<%= user.userCompany%>">Go to Accounts</a>
+        <%if(user.userType == "manager"){ %>
         <a class="btn btn-primary profile-concern-btn" href="/note/concerns/<%= user.userCompany%>">Go to Concerns</a>
+         <%}%>
     </div>
   </div>
 </div>
