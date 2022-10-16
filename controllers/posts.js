@@ -9,7 +9,8 @@ module.exports = {
   getProfile: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id });
-      res.render("profile.ejs", { posts: posts, user: req.user, userCompany:req.user.userCompany});
+      const notes = await Note.find( {company: req.user.userCompany } );
+      res.render("profile.ejs", { posts: posts, notes: notes, user: req.user, userCompany:req.user.userCompany});
     } catch (err) {
       console.log(err);
     }

@@ -9,7 +9,13 @@
         <p><strong>Email</strong>: <%= user.email %></p>
         <a href="/logout" class="col-3 btn btn-primary">Logout</a>
         <a class="btn btn-primary" href="/accounts/<%= user.userCompany%>">Go to Accounts</a>
-        <%if(user.userType == "manager"){ %>
+        <% let newArr = [];%>
+          <% for(i = 0; i < notes.length; i++){ %>
+          <% if(notes[i].concern == true){ %>
+           <% newArr.push(notes[i]); %>
+          <%}%>
+        <%}%>
+        <% if(user.userType == "manager" && newArr.length > 0){ %>
         <a class="btn btn-primary profile-concern-btn" href="/note/concerns/<%= user.userCompany%>">Go to Concerns</a>
          <%}%>
     </div>
