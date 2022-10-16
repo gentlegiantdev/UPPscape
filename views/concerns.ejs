@@ -1,4 +1,5 @@
 <%- include('partials/header') -%>
+<%- include('partials/logged-in-navbar') -%>
 <div class="hero min-h-screen concerns-header">
   <div class="hero-content text-center">
     <div class="max-w-md">
@@ -27,7 +28,7 @@
         </ul> 
          <div class="row justify-content-center mt-5" id="concerns-bottom-btn-section">
           <a class="btn btn-primary concerns-bottom-btn " href="/profile">Return to Profile</a>
-          <a class="btn btn-primary concerns-bottom-btn " href="/accounts">Go to Accounts</a>
+          <a class="btn btn-primary concerns-bottom-btn " href="/accounts/<%= user.userCompany%>">Go to Accounts</a>
         </div> 
       </div> 
 

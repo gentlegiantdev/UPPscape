@@ -50,7 +50,7 @@ createNote: async (req, res) => {
     try {
       const note = await Note.findById(req.params.id);
   
-      res.render("note.ejs", { note: note, note_id: req.params.id, post_id: req.params.post, });
+      res.render("note.ejs", { note: note, note_id: req.params.id, post_id: req.params.post, user: req.user });
       console.log(note);
     } catch (err) {
       console.log(err);
@@ -60,7 +60,7 @@ createNote: async (req, res) => {
   getConcerns: async (req, res) => {
      try {
       const notes = await Note.find({ concern: true }).sort({ createdAt: "desc" }).lean();
-      res.render("concerns.ejs", { notes: notes });
+      res.render("concerns.ejs", { notes: notes, user: req.user });
       console.log(req.params);
     } catch (err) {
       console.log(err);

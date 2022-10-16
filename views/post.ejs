@@ -1,5 +1,5 @@
 <%- include('partials/header') -%>
-
+<%- include('partials/logged-in-navbar') -%>
 
 <div class="container">
   <div>
@@ -171,7 +171,7 @@
     </div>  
     <div class="bottom-btn-section">
       <a class="btn btn-primary bottom-btn" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary bottom-btn" href="/accounts">Return to Accounts</a>
+      <a class="btn btn-primary bottom-btn" href="/accounts/<%= post.company%>">Return to Accounts</a>
     </div>
   </div>
 </div>

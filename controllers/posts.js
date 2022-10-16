@@ -18,7 +18,7 @@ module.exports = {
     try {
       const posts = await Post.find({ account: req.params.id}).sort({ locationNumber: "asc" }).lean();
        const account = await Account.findById(req.params.id);
-      res.render("feed.ejs", { posts: posts, account_id: req.params.id, account: account  });
+      res.render("feed.ejs", { posts: posts, user: req.user, account_id: req.params.id, account: account  });
     } catch (err) {
       console.log(err);
     }
@@ -108,9 +108,9 @@ module.exports = {
       // Delete post from db
       await Post.remove({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect("/accounts");
+      res.redirect(`/accounts/${req.params.company}`);
     } catch (err) {
-      res.redirect("/accounts");
+      res.redirect(`/accounts/${req.params.company}`);
     }
   },
 

@@ -4,8 +4,9 @@ const Account = require("../models/Account");
 module.exports = {
   getAccounts: async (req, res) => {
     try {
-      const accounts = await Account.find().collation({locale:'en',strength: 2}).sort({accountName:1}).lean();
+      const accounts = await Account.find({ userCompany: req.params.id }).collation({locale:'en',strength: 2}).sort({accountName:1}).lean();
       res.render("accounts.ejs", { accounts: accounts, user: req.user });
+      console.log(req.params.id)
     } catch (err) {
       console.log(err);
     }
@@ -18,7 +19,7 @@ module.exports = {
         userCompany: req.body.userCompany,
       });
       console.log("Account has been added!");
-      res.redirect("/accounts");
+      res.redirect(`/accounts/${req.body.userCompany}`);
     } catch (err) {
       console.log(err);
     }
