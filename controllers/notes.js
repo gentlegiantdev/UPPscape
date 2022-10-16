@@ -59,7 +59,7 @@ createNote: async (req, res) => {
 
   getConcerns: async (req, res) => {
      try {
-      const notes = await Note.find({ concern: true }).sort({ createdAt: "desc" }).lean();
+      const notes = await Note.find({company: req.params.id, concern: true }).sort({ createdAt: "desc" }).lean();
       res.render("concerns.ejs", { notes: notes, user: req.user });
       console.log(req.params);
     } catch (err) {
