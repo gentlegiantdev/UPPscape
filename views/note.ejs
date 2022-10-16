@@ -28,13 +28,14 @@
                         class="">
                         <button class="btn btn-primary fa fa-trash" type="submit"></button>
                     </form>
+                    <%if(note.concern){ %>
                     <form
                       action="/note/removeconcern/<%= note.id %>?_method=PUT"
                       method="POST">
                         <button class="btn btn-primary mark-serviced-btn" id="remove-concern-btn" type="submit">Remove Concern</button>
                       </div>
                     </form>
-
+                     <%}%>
                      <div class="card-actions justify-end">
                         <a class="btn btn-primary individual-note-link-btn1" href="/post/<%= note.post%>">Return to location</a>
                         <a class="btn btn-primary individual-note-link-btn2" href="/note/concerns/<%= note.company%>">Return to Concerns</a>
