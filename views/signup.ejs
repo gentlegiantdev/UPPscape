@@ -15,7 +15,7 @@
                 <% } %>
 
               <div class="form-control login-form">
-                <form action="/signup" method="POST">
+                <form action="/signup" enctype="multipart/form-data" method="POST">
                     <div class="mb-3">
                         <label for="userCompany" class="form-label">Company</label>
                         <input type="text" class="form-control" id="userCompany" name="userCompany">
@@ -31,7 +31,14 @@
                     <div class="mb-3">
                         <label for="userName" class="form-label">User Name</label>
                         <input type="text" class="form-control" id="userName" name="userName">
-                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="imgUpload" class="form-label">Profile Pic</label>
+                      <label class="input-group">
+                        <input type="file" class="form-control" id="profileImageUpload" name="file">
+                      </label>
+                      <div id="imageHelp" class="form-text">Choose a photo to be your profile picture.</div>
+                    </div>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Email address</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
