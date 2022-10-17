@@ -15,6 +15,16 @@ module.exports = {
       console.log(err);
     }
   },
+  getChangePlant: async (req, res) => {
+    try {
+      const post = await Post.findById(req.params.id);
+      const notes = await Note.find( {company: req.user.userCompany } );
+      const account = await Account.findById(req.params.id);
+      res.render("changeplant.ejs", { post: post, account: account, notes: notes, user: req.user, userCompany:req.user.userCompany});
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find({ account: req.params.id}).sort({ locationNumber: "asc" }).lean();
@@ -58,6 +68,27 @@ module.exports = {
       console.log(err);
     }
   },
+  updatePost: async (req, res) => {
+   try {
+      const result = await cloudinary.uploader.upload(req.file.path);
+
+      await Post.findOneAndUpdate(
+        { _id: req.params.id },
+        {
+          $set: { 
+                  currentPlant: req.body.plant,
+                  plantSize: req.body.plantSize,
+                  plantImage: result.secure_url,
+                  cloudinaryId: result.public_id,
+                }
+        }
+      );
+      console.log("Plant has been updated.");
+      res.redirect(`/post/${req.params.id}`);
+    } catch (err) {
+      console.log(err);
+    }
+  },
   updatePostServiceDate: async (req, res) => {
    try {
       await Post.findOneAndUpdate(
@@ -82,20 +113,6 @@ module.exports = {
       );
       console.log("New service timestamps logged.");
       res.redirect(`/feed/${req.params.id}`);
-    } catch (err) {
-      console.log(err);
-    }
-  },
-  likePost: async (req, res) => {
-    try {
-      await Post.findOneAndUpdate(
-        { _id: req.params.id },
-        {
-          $inc: { likes: 1 },
-        }
-      );
-      console.log("Likes +1");
-      res.redirect(`/post/${req.params.id}`);
     } catch (err) {
       console.log(err);
     }

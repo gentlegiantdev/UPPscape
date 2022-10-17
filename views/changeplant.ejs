@@ -1,0 +1,32 @@
+<%- include('partials/header') -%>
+<%- include('partials/logged-in-navbar') -%>
+
+<div class="form-control add-location-section">
+            <h2>Update Plant Location # <%= post.locationNumber %></h2>
+            <form action="/post/updatePost/<%= post.id %>?_method=PUT" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                  <label for="currentPlant" class="label-text above-label">New Plant</label>
+                  <label class="input-group">
+                    <span>New Plant</span>  
+                    <input type="text" class="form-control" id="newPlant" name="currentPlant">
+                  </label>
+              </div>
+              <div class="mb-3">
+                  <label for="plantSize" class="label-text above-label">Plant Size</label>
+                  <label class="input-group">
+                    <span>Plant Size</span>
+                    <input type="text" class="form-control" id="newPlantSize" name="plantSize">
+                  </label>
+              </div>
+              <div class="mb-3">
+                <label for="imgUpload" class="label-text above-label">Plant Image</label>
+                <label class="input-group">
+                  <input type="file" class="form-control" id="newImageUpload" name="file">
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary add-location-btn" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>  
+
+<%- include('partials/footer') -%>

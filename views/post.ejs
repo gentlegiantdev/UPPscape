@@ -19,6 +19,7 @@
               action="/post/updatePostServiceDate/<%= post.id %>?_method=PUT"
               method="POST">
               <div class="card-actions justify-end">
+                <a class="btn btn-primary change-plant-btn" href="/post/changeplant/<%= post.id%>">Change Plant</a>
                 <button class="btn btn-primary mark-serviced-btn" id="post-marked-service-btn" type="submit">Mark Serviced</button>
               </div>
             </form>
