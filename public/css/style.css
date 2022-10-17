@@ -282,11 +282,16 @@ div label.above-label, .add-location-btn {
     justify-content: space-evenly;
 }
 
+.change-plant-btn {
+     position: absolute;
+    bottom: 15px;
+    left: 15px; 
+}
+
 #post-marked-service-btn {
     position: absolute;
     bottom: 15px;
-    right: 15px;
-    
+    right: 15px;  
 }
 
 .btn-primary.fa.fa-trash {
