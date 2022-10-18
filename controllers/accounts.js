@@ -13,6 +13,13 @@ module.exports = {
   },
   createAccount: async (req, res) => {
     try {
+      //format the input value to covert text to title case and remove whitespace from both ends 
+      req.body.accountName = req.body.accountName.trim().toLowerCase().split(' ');
+      for(i = 0; i < req.body.accountName.length; i++){
+        req.body.accountName[i] = req.body.accountName[i][0].toUpperCase() + req.body.accountName[i].substr(1);
+      }
+      req.body.accountName = req.body.accountName.join(" ");
+      console.log(req.body.accountName)
 
       await Account.create({
         accountName: req.body.accountName,

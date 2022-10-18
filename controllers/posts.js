@@ -48,6 +48,11 @@ module.exports = {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
 
+      //format the input value to covert text to title case and remove whitespace from both ends 
+      req.body.company = req.body.company.trim();
+      req.body.company = req.body.company.charAt(0).toUpperCase() + req.body.accountName.substr(1).toLowerCase();
+      
+
       await Post.create({
         company: req.body.company,
         account: req.body.account,
