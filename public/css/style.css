@@ -396,3 +396,7 @@ ul.p-2.bg-base-100 {
 .email-input-section {
     padding-bottom: .5em;
 }
+
+.email-input-section input {
+    color: rgb(81	142	29		);
+}
