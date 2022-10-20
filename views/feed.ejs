@@ -6,7 +6,7 @@
         <% for(var i=0; i<posts.length; i++) {%>
           <% if(posts[i].company == user.userCompany){%>
           <li class="">
-            <div class="card lg:card-side bg-base-100 shadow-xl">
+            <div class="card lg:card-side bg-base-100 shadow-xl plant-location">
               <figure><img class="plant-image" src="<%= posts[i].plantImage%>"></figure>
               <div class="card-body">
                 <h2 class="card-title">Last Serviced: <%= posts[i].lastServicedDate%></h2>
@@ -21,13 +21,6 @@
                 <div class="card-actions justify-end">
                   <a class="btn btn-primary" href="/post/<%= posts[i]._id%>">More Info</a>
                 </div>
-                <form
-                  action="/post/updateAllPostServiceDates/<%= account_id %>?_method=PUT"
-                  method="POST">
-                  <div class="card-actions justify-end">
-                    <button class="btn btn-primary mark-serviced-btn mark-all-serviced-btn" type="submit">Mark All Serviced</button>
-                  </div>
-                </form>
               </div>
             </div>
           </li>
@@ -35,6 +28,14 @@
         <% } %>
         </ul>
     </div>
+  </div>
+  <div class="mark-all-serviced-div">
+<form action="/post/updateAllPostServiceDates/<%= account.id %>?_method=PUT"
+                  method="POST">
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary mark-serviced-btn mark-all-serviced-btn" type="submit">Mark All Serviced</button>
+                  </div>
+                </form>    
   </div>
   <div class="form-control add-location-section">
             <h2>Add a Plant Location</h2>

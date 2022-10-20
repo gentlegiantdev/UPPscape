@@ -86,6 +86,10 @@ a:link:hover, a:link:active {
      
 }
 
+.profile-div {
+     background-color: rgb(246	246	195);
+}
+
 .btn.btn-primary.profile-concern-btn:hover, .btn.btn-primary.profile-concern-btn:active {
     margin-top: 4px;
     color: rgb(229, 207, 207);
@@ -98,11 +102,11 @@ a:link:hover, a:link:active {
 
 /* about */
 div.about-div-1 {
-
+background-color: rgb(234	234	119		);
 }
 
 .hero.min-h-screen.bg-base-200.about-div-2 {
-    background-color: rgb(234	234	119		);
+    
 }
 
 .hero.min-h-screen.bg-base-200.about-div-3 {
@@ -118,6 +122,15 @@ div.about-div-1 {
 .hero-content.text-center.text-neutral-content.about-div-5 {
     color: rgb(234	234	119		);
 }
+
+/* Contact */
+
+.mc_embed_signup {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
 
 /* concerns */
 
@@ -228,6 +241,10 @@ div.drawer-content > div  {
 
 /*locations feed*/
 
+.plant-location {
+    margin-top: 1em;
+}
+
 .add-location-section {
     background-color: rgb(23	27	53		);
     color: white;
@@ -259,7 +276,16 @@ div label.above-label, .add-location-btn {
     color: white;
 }
 
-/* Feed */
+.mark-all-serviced-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mark-all-serviced-div button{
+    margin: 1em 0;
+    background-color: rgb(219	252	179	);
+}
 
  .input-group span {
     background-color: rgb(200	200	200	);

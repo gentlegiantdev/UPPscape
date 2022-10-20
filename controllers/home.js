@@ -14,5 +14,8 @@ module.exports = {
   getTerms: (req, res) => {
     res.render("termsofuse.ejs");
   },
+  getContact: (req, res) => {
+    res.render("contact.ejs");
+  },
 
 };

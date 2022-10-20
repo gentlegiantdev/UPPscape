@@ -49,8 +49,8 @@ module.exports = {
       const result = await cloudinary.uploader.upload(req.file.path);
 
       //format the input value to covert text to title case and remove whitespace from both ends 
-      req.body.company = req.body.company.trim();
-      req.body.company = req.body.company.charAt(0).toUpperCase() + req.body.accountName.substr(1).toLowerCase();
+      // req.body.company = req.body.company.trim();
+      // req.body.company = req.body.company.charAt(0).toUpperCase() + req.body.accountName.substr(1).toLowerCase();
       
 
       await Post.create({
@@ -111,12 +111,13 @@ module.exports = {
   updateAllPostServiceDates: async (req, res) => {
    try {
       await Post.updateMany(
-        { _account: req.params.id },
+        { account: req.params.id },
         {
           $currentDate: { lastServicedDate: true},
         },
       );
       console.log("New service timestamps logged.");
+      console.log(req.params.id);
       res.redirect(`/feed/${req.params.id}`);
     } catch (err) {
       console.log(err);
@@ -131,9 +132,9 @@ module.exports = {
       // Delete post from db
       await Post.remove({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect(`/accounts/${req.params.company}`);
+      res.redirect(`/accounts/${post.account}`);
     } catch (err) {
-      res.redirect(`/accounts/${req.params.company}`);
+      res.redirect(`/accounts/${post.account}`);
     }
   },
 
