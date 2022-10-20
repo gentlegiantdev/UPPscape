@@ -13,6 +13,7 @@ router.get("/about", homeController.getAbout);
 router.get("/privacypolicy", homeController.getPrivacy);
 router.get("/privacypolicy/#cookies", homeController.getCookie);
 router.get("/termsofuse", homeController.getTerms);
+router.get("/affiliates", homeController.getAffiliates);
 router.get("/contact", homeController.getContact);
 router.get("/accounts/:id", ensureAuth, accountsController.getAccounts);
 router.get("/profile/", ensureAuth, postsController.getProfile);

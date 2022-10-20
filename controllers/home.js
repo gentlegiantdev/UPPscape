@@ -17,5 +17,8 @@ module.exports = {
   getContact: (req, res) => {
     res.render("contact.ejs");
   },
+   getAffiliates: (req, res) => {
+    res.render("affiliates.ejs");
+  },
 
 };
