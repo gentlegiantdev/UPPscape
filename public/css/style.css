@@ -389,6 +389,10 @@ ul.p-2.bg-base-100 {
 
 /* Footer */
 
+.hover-white:hover, .hover-white:active{
+    color:#ffffff;
+}
+
 .email-ask-section {
     background-color: rgb(226,226,226	);
 }
