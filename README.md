@@ -11,7 +11,14 @@ Each plant location displays a time stamp of its most recent service as well as 
 
 ## Optimizations
 UPPscape currently allows users to upload their own plant photos and data. In addition to this I would like to add a pull-down list of pre-existing plant images/data for at least a hundred common plants for users to choose from. No public houseplant API currently exists as far as I can tell (please message me if you know of one!) so I am in the process of creating one that will be open source and publicly available.
-Other planned optimizations include: - Ability to assign accounts to certain technicians- Ability to limit technicians to only view accounts they are assigned to - Setting geolocation data for each account and causing its page to appear when user approaches- Option to display all recent note changes to management-level users- Page showing current warehouse inventory- Page showing purchased inventory en route to warehouse
+
+- Other planned optimizations include: 
+    - Ability to assign accounts to certain technicians
+    - Ability to limit technicians to only view accounts they are assigned to
+    - Setting geolocation data for each account and causing its page to appear when user approaches
+    - Option to display all recent note changes to management-level users
+    - Page showing current warehouse inventory
+    - Page showing purchased inventory en route to warehouse
 
 
 
